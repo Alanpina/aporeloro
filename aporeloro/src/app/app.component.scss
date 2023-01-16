@@ -1,0 +1,25 @@
+.container{
+  display: flex;
+  flex-basis: 1;
+  justify-content: center;
+}
+
+.text{
+  color: black;
+  font-size: 20px;
+  padding: 0.1em;
+}
+.blink {
+  border-right-style: solid;
+  animation: 1s blink infinity;
+}
+.blink-element{
+  border-right-width: 2px;
+  border-right-color:black;
+  font-size: 20px;
+}
+@keyframes blink {
+  to {
+    opacity: 0;
+  }
+}
