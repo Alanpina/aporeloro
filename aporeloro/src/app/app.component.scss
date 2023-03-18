@@ -1,16 +1,9 @@
-/* Agrega la fuente Futura Bold desde un CDN */
-@import url('https://fonts.googleapis.com/css2?family=Futura&display=swap');
 
-/* Aplica la fuente a los elementos que desees */
-body {
-  font-family: 'Futura', sans-serif;
-  font-weight: bold;
-}
 
 .typewriter-container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
 }
 
@@ -37,18 +30,11 @@ body {
   }
 }
 
-html {
-  background-color: black !important;
-}
 
-body {
-  background-color: black; /* Fondo negro */
-}
 .typewriter-container {
   display: flex;
   justify-content: center; /* Centra horizontalmente */
   align-items: center; /* Centra verticalmente */
-  height: 100vh; /* Altura de la sección */
 }
 .typewriter {
   font-family: 'Futura Bold', sans-serif; /* Fuente */

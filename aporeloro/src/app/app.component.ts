@@ -7,7 +7,7 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
-
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -24,7 +24,7 @@ export class AppComponent implements OnInit , AfterViewInit {
   currentIndex = 0; // El índice de la palabra actual
   currentWord = ''; // La palabra actual
   showCursor = true; // Para mostrar/ocultar el cursor en la animación
-
+  version: string = environment.version;
 
   constructor() { }
 
