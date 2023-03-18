@@ -1,25 +1,54 @@
-.container{
-  display: flex;
-  flex-basis: 1;
-  justify-content: center;
+/* Agrega la fuente Roboto desde un CDN */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Aplica la fuente a los elementos que desees */
+body {
+  font-family: 'Roboto', sans-serif;
 }
 
-.text{
-  color: black;
-  font-size: 20px;
-  padding: 0.1em;
+.typewriter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
-.blink {
-  border-right-style: solid;
-  animation: 1s blink infinity;
+
+.typewriter {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-.blink-element{
-  border-right-width: 2px;
-  border-right-color:black;
-  font-size: 20px;
+
+.typewriter-cursor {
+  margin-left: 10px;
+  animation: blink 0.7s infinite;
 }
+
 @keyframes blink {
-  to {
+  from, to {
+    opacity: 1;
+  }
+  50% {
     opacity: 0;
   }
 }
+
+html {
+  background-color: black !important;
+}
+
+.typewriter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.typewriter {
+  font-size: 5rem;
+  color: gold;
+}
+

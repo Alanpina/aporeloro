@@ -13,68 +13,67 @@ import {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit, AfterViewInit {
-  @ViewChild('textElement') textElement!: ElementRef;
-  @ViewChild('blinkElement') blinkElement!: ElementRef;
+//Landing page de a por el oro, esta pagina se muestra al entrar en la web
+//Se muestra un titulo y un texto que se va escribiendo y borrando
+//El texto se va escribiendo y borrando de forma automatica con un intervalo de tiempo y se va cambiando de palabra
+export class AppComponent implements OnInit , AfterViewInit {
+  @ViewChild('typewriter', {static: true}) typewriter!: ElementRef;
 
-  @Input() wordArray: string[] = [
-    'Oro...',
-    'Queso...',
-    'Loro...',
-  ];
-  @Input() typingSpeedMilliseconds = 300;
-  @Input() deleteSpeedMilliseconds = 300;
+  phrase = 'A POR EL ORO'; // La frase que se animará
+  words = ['QUESO', 'LORO', 'ORO']; // Las palabras que se utilizarán para la animación
+  currentIndex = 0; // El índice de la palabra actual
+  currentWord = ''; // La palabra actual
+  showCursor = true; // Para mostrar/ocultar el cursor en la animación
 
-  private actualWordIndex = 0;
 
-  title = 'a por el oro';
+  constructor() { }
 
-  constructor(private renderer: Renderer2) {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.startAnimation(this.phrase);
+  }
 
   ngAfterViewInit(): void {
-    this.typingEffect();
   }
 
-  private typingEffect(): void {
-    const word = this.wordArray[this.actualWordIndex].split('');
-    this.loopTyping(word);
-  }
 
-  loopTyping(word: Array<string>) {
-    if (word.length > 0) {
-      this.textElement.nativeElement.innerHTML += word.shift();
+  startAnimation(phrase: string) {
+    setTimeout(() => {
+      // Primera parte de la animación: escribir la frase completa
+      const typeWriterElement = this.typewriter.nativeElement;
+      typeWriterElement.innerHTML = phrase;
+
+      // Segunda parte de la animación: borrar la palabra "oro" y escribir una nueva palabra
       setTimeout(() => {
-        this.loopTyping(word);
-      }, this.typingSpeedMilliseconds);
-    } else {
-      this.deletingEffect();
-    }
-  }
+        const newWord = this.words[this.currentIndex];
+        let limit = 3;
+        if(this.currentIndex > 0) {
+          limit = this.words[this.currentIndex - 1].length;
+        }
+        this.currentIndex = this.currentIndex + 1
+        // Si la palabra es "queso" borrar 4 letras en lugar de 3, para que coincida con el tamaño de la palabra "oro" y no se vea raro el borrado y escritura de la palabra
+        for (let i = 0; i < limit; i++) { // Borrar la palabra "oro" letra por letra
+          setTimeout(() => {
+            typeWriterElement.innerHTML = typeWriterElement.innerHTML.slice(0, -1);
+          }, i * 100);
+        }
 
-  private deletingEffect(): void {
-    const word = this.wordArray[this.actualWordIndex].split('');
+        for (let i = 0; i < newWord.length; i++) { // Escribir la nueva palabra letra por letra
+          setTimeout(() => {
+            typeWriterElement.innerHTML += newWord.charAt(i);
+          }, (i + limit) * 100);
+        }
 
-    this.loopDeleting(word);
-  }
+        // Repetir la animación con la siguiente palabra
+        setTimeout(() => {
+          if(this.currentIndex === this.words.length) {
+            this.currentIndex = 0;
+            this.startAnimation(this.phrase);
+          return;
+        }
 
-  loopDeleting(word: Array<string>) {
-    if (word.length) {
-      word.pop();
-      this.textElement.nativeElement.innerHTML = word.join('');
-      setTimeout(() => {
-        this.loopDeleting(word);
-      }, this.typingSpeedMilliseconds);
-    }
-    else {
-      let any = this.wordArray.length > this.actualWordIndex + 1;
-      this.actualWordIndex =
-        this.wordArray.length > this.actualWordIndex + 1
-          ? this.actualWordIndex + 1
-          : 0;
-
-      this.typingEffect();
-    }
+          this.startAnimation(typeWriterElement.innerHTML);
+        }, 3000);
+      }, 2000);
+    }, 1000);
   }
 }
