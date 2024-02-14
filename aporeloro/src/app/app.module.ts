@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderModule } from './components/header/header.module';
 import { MainBannerModule } from './components/main-banner/main-banner.module';
+import { StoreSectionModule } from './components/store-section/store-section.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MainBannerModule } from './components/main-banner/main-banner.module';
     BrowserModule,
     AppRoutingModule,
     HeaderModule,
-    MainBannerModule
+    MainBannerModule,
+    StoreSectionModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
