@@ -1,0 +1,53 @@
+#social {
+  padding-bottom: 90px;
+  border-bottom: 3px dotted #eee;
+}
+
+#social .col-2 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+#social .thumb {
+  position: relative;
+}
+
+#social .thumb .icon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0,0,0,0.85);
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+}
+
+#social .thumb:hover .icon {
+  opacity: 1;
+  visibility: visible;
+}
+
+#social .thumb .icon h6 {
+  color: #fff;
+  position: absolute;
+  font-size: 14px;
+  bottom: 40px;
+  font-weight: 400;
+  left: 15px;
+}
+
+#social .thumb .icon i {
+  color: #fff;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+
+#social .thumb img {
+  width: 100%;
+  overflow: hidden;
+}

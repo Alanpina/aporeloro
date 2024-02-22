@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderModule } from './components/header/header.module';
 import { MainBannerModule } from './components/main-banner/main-banner.module';
 import { StoreSectionModule } from './components/store-section/store-section.module';
+import { InstagramModule } from './components/instagram/instagram.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { StoreSectionModule } from './components/store-section/store-section.mod
     HeaderModule,
     MainBannerModule,
     StoreSectionModule,
+    InstagramModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
