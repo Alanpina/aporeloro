@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "aporeloro:build:production"
+              "buildTarget": "aporeloro:build:production"
             },
             "development": {
-              "browserTarget": "aporeloro:build:development"
+              "buildTarget": "aporeloro:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "aporeloro:build"
+            "buildTarget": "aporeloro:build"
           }
         },
         "test": {
