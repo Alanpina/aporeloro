@@ -7,13 +7,13 @@
                   <span>A POR EL ORO</span>
                 </div>
                   <!-- ***** Menu Start ***** -->
-                  <ul class="nav">
+                  <ul class="nav" [class.opened]="menuOpened">
                       <li class="scroll-to-section"><a href="#top" class="active">Inicio</a></li>
                       <li class="scroll-to-section"><a href="#men">Media's</a></li>
                       <li class="scroll-to-section"><a href="#women">Tienda</a></li>
                       <li class="scroll-to-section"><a href="#kids">Contacto</a></li>
                   </ul>
-                  <a class='menu-trigger'>
+                  <a class='menu-trigger' [ngClass]="{'active': menuOpened}" (click)="onHamburgerClick()">
                       <span>Menu</span>
                   </a>
                   <!-- ***** Menu End ***** -->
