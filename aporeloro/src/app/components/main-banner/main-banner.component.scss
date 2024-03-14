@@ -1,8 +1,9 @@
-.main-banner {
-  border-bottom: 3px dotted #eee;
-  padding-bottom: 30px;
-  height: 100vh;
-  overflow: hidden;
+@media (max-width: 767px) {
+  .main-banner {
+    border-bottom: 3px dotted #eee;
+    padding-top: 160px;
+    padding-bottom: 30px;
+  }
 }
 
 .main-banner .left-content .thumb img {
