@@ -1,7 +1,7 @@
 .header-area .main-nav .logo {
   line-height: 100px;
   color: var(--gray-dark);
-  font-family: 'APORELORO', sans-serif;
+  font-family: "APORELORO", sans-serif;
   font-size: 28px;
   font-weight: 700;
   text-transform: uppercase;
@@ -12,6 +12,23 @@
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
+
+.header-area {
+  border-bottom: 3px solid;
+  box-shadow: none;
+  background-color: #fff;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 100;
+  height: 100px;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
 @media (max-width: 1200px) {
   .header-area .main-nav .nav li {
     padding-left: 12px;
@@ -28,7 +45,7 @@
   }
   .header-area.header-sticky .nav li a:hover,
   .header-area.header-sticky .nav li a.active {
-    color: #aaa!important;
+    color: #aaa !important;
     opacity: 1;
   }
   .header-area.header-sticky .nav li.search-icon a {
@@ -63,12 +80,12 @@
     -o-transition: all 0s ease 0s;
     transition: all 0s ease 0s;
     margin-left: 0px;
-    transition: ease-in-out 600ms max-height
+    transition: ease-in-out 600ms max-height;
   }
-  .header-area .main-nav .nav.opened{
+  .header-area .main-nav .nav.opened {
     max-height: 600px;
 
-    transition: ease-in-out 600ms max-height
+    transition: ease-in-out 600ms max-height;
   }
   .header-area .main-nav .nav li:first-child {
     border-top: 1px solid #eee;
@@ -93,7 +110,7 @@
   }
   .header-area .main-nav .nav li a:hover {
     background: #eee !important;
-    color: #aaa!important;
+    color: #aaa !important;
   }
   .header-area .main-nav .nav li.submenu ul {
     position: relative;
@@ -118,12 +135,13 @@
     height: auto !important;
   }
   .header-area .main-nav .nav li.submenu:after {
-    color: #3B566E;
+    color: #3b566e;
     right: 25px;
     font-size: 14px;
     top: 15px;
   }
-  .header-area .main-nav .nav li.submenu:hover ul, .header-area .main-nav .nav li.submenu:focus ul {
+  .header-area .main-nav .nav li.submenu:hover ul,
+  .header-area .main-nav .nav li.submenu:focus ul {
     height: 0px;
   }
 }
@@ -133,4 +151,3 @@
     display: flex !important;
   }
 }
-
