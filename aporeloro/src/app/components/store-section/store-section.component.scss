@@ -8,12 +8,14 @@ h4 {
 
 .btn {
   margin-top: 5vh;
+  border: 3px solid;
+  border-radius: 0;
+  font-family: 'APORELORO';
 }
 
 @media (max-width: 767px) {
   .btn {
     display: block;
     width: 100%;
-    margin-top: 5vh;
   }
 }
