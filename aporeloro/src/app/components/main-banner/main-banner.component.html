@@ -5,7 +5,9 @@
               <div class="left-content">
                   <div class="thumb">
                       <div class="inner-content">
-                          <span>{{p1}}</span>
+                          <ng-container *ngIf="isMediumSize">
+                            <span>{{textMediumSize}}</span>
+                          </ng-container>
                       </div>
                       <img src="assets/images/left-banner-image.jpg" alt="">
                   </div>
