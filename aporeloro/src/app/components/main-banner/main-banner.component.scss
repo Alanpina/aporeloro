@@ -1,14 +1,22 @@
+@media (max-width: 1200px) {
+  .black-overlay{
+    bottom: 0px;
+  }
+}
 @media (max-width: 767px) {
   .main-banner {
     padding-top: 130px;
   }
+  .black-overlay{
+    bottom: 30px;
+  }
 }
+
 
 .black-overlay{
   background: rgba(0, 0, 0, 0.7);
   position: absolute;
   width: 100%;
-  bottom: 0;
   left: 0;
   top: 0;
 }
