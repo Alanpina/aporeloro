@@ -1,0 +1,23 @@
+.logo {
+  line-height: 100px;
+  color: var(--gray-dark);
+  font-family: "APORELORO", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  float: left;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+
+@media (max-width: 767px) {
+.logo {
+    color: #1e1e1e;
+    margin-left: 30px;
+  }
+
+}
