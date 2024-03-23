@@ -1,12 +1,29 @@
-#social {
-  padding-bottom: 90px;
+@media (max-width: 1200px) {
+  #social {
+    padding-bottom: 90px;
+  }
 }
+@media (max-width: 767px) {
+  .feed-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  #social {
+    padding-bottom: 0;
+  }
+}
+
+
 
 #social .col-2 {
   padding-left: 0;
   padding-right: 0;
 }
-
 
 #social .thumb {
   position: relative;
@@ -19,10 +36,10 @@
   right: 0;
   top: 0;
   width: 100%;
-  background-color: rgba(0,0,0,0.85);
+  background-color: rgba(0, 0, 0, 0.85);
   opacity: 0;
   visibility: hidden;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 #social .thumb:hover .icon {
@@ -49,4 +66,10 @@
 #social .thumb img {
   width: 100%;
   overflow: hidden;
+}
+
+.section-heading span {
+  font-size: 14px;
+  color: black;
+  font-weight: 400;
 }
