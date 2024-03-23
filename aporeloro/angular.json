@@ -28,7 +28,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/font-awesome.css",
+              "src/assets/css/templatemo-hexashop.css",
+              "src/assets/css/owl-carousel.css",
+              "src/assets/css/lightbox.css"
             ],
             "scripts": [
               "src/assets/js/jquery-2.1.0.min.js",
