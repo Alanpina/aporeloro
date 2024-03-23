@@ -4,6 +4,15 @@
   }
 }
 
+.black-overlay{
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  top: 0;
+}
+
 .main-banner .left-content .thumb img {
   width: 100%;
   overflow: hidden;
@@ -25,7 +34,6 @@
   font-size: 16px;
   color: #fff;
   font-weight: 400;
-  font-style: italic;
   display: block;
   margin-bottom: 30px;
 }
