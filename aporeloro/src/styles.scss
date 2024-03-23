@@ -1,33 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
-
-/* Agrega la fuente Futura Bold desde un CDN */
-
-// @font-face {
-//   font-family: 'Futura Bold';
-//   src: url('assets/fonts/Futura-Bold.ttf') format('truetype');
-//   font-weight: bold;
-//   font-style: normal;
-// }
-
-// /* Aplica la fuente a los elementos que desees */
-// body {
-//   font-family: 'Futura', sans-serif;
-//   background-color: black; /* Fondo negro */
-//   font-weight: bold;
-// }
-
-// html {
-//   background-color: black !important;
-//   display: flex;
-//   justify-content: center;
-// }
 
 
-// footer {
-//   display: flex;
-//   justify-content: center;
-//   background-color: black;
-//   color: #d4af37;
-//   bottom: 0;
-//   width: 100%;
-// }
+html, body {
+  font-family: 'APORELORO', sans-serif;
+  font-weight: 400;
+  background-color: #fff;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -79,15 +79,6 @@ header, nav, section, article, aside, footer, hgroup {
   box-sizing: border-box;
 }
 
-html, body {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  background-color: #fff;
-  font-size: 16px;
-  -ms-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 a {
   text-decoration: none !important;
@@ -113,11 +104,7 @@ p {
 global styles
 ---------------------------------------------
 */
-html,
-body {
-  background: #fff;
-  font-family: 'Poppins', sans-serif;
-}
+
 
 ::selection {
   background: #2a2a2a;
