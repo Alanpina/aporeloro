@@ -13,7 +13,7 @@ export class InstagramComponent{
   constructor(private breakPointObserver : BreakpointObserverService) {}
 
   get tokenToShow(){
-    return this.breakPointObserver.isTabletOrDesktop ?   this.mediumFeedToken : this.largeFeedToken
+    return this.breakPointObserver.isTabletOrDesktop ?   this.largeFeedToken : this.mediumFeedToken
   }
 
 }
