@@ -1,36 +1,37 @@
-@media (max-width: 1200px) {
-  .main-banner .left-content .image-container {
-    height: 450px;
-    width: 100%;
-    overflow: hidden;
+  .main-banner {
+    padding-top: 130px;
   }
-
-  .main-banner .left-content .inner-content {
+  .main-banner .left-content .image-container .inner-content{
     position: absolute;
-    left: 0;
     bottom: 10%;
     padding-inline: 40px;
     text-align: center;
   }
 
-  .main-banner .left-content .inner-content span {
-    font-size: 16px;
-    color: #fff;
-    font-weight: 400;
-    display: block;
+  .main-banner .left-content .image-container {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+  }
+
+  .main-banner .left-content {
     margin-bottom: 30px;
   }
-}
+
 @media (max-width: 767px) {
-  .main-banner {
-    padding-top: 130px;
-  }
 
   .main-banner .left-content .image-container .inner-content {
     left: 50%;
     top: 47.5%;
     transform: translate(-50%, -50%);
     text-align: center;
+    padding-inline: 0;
+    bottom: auto;
+  }
+  .main-banner .left-content .image-container {
+    width: 100%;
+    height:auto;
+    overflow: hidden;
   }
 }
 
@@ -46,11 +47,22 @@
   top: 0;
 }
 
+.main-banner .left-content .image-container img {
+  width: 100%;
+  overflow: hidden;
+}
+
 .container-fluid {
   padding: 0;
 }
 
-
+.main-banner .left-content .inner-content span {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 30px;
+}
 
 .main-banner .right-content .right-first-image {
   margin-bottom: 28.5px;
