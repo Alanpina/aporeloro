@@ -1,19 +1,44 @@
 @media (max-width: 1200px) {
-  .black-overlay{
-    bottom: 0px;
+  .main-banner .left-content .image-container {
+    height: 450px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .main-banner .left-content .inner-content {
+    position: absolute;
+    left: 0;
+    bottom: 10%;
+    padding-inline: 40px;
+    text-align: center;
+  }
+
+  .main-banner .left-content .inner-content span {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 30px;
   }
 }
 @media (max-width: 767px) {
   .main-banner {
     padding-top: 130px;
   }
-  .black-overlay{
-    bottom: 30px;
+
+  .main-banner .left-content .image-container .inner-content {
+    left: 50%;
+    top: 47.5%;
+    transform: translate(-50%, -50%);
+    text-align: center;
   }
 }
 
+.black-overlay {
+  bottom: 30px;
+}
 
-.black-overlay{
+.black-overlay {
   background: rgba(0, 0, 0, 0.7);
   position: absolute;
   width: 100%;
@@ -21,46 +46,27 @@
   top: 0;
 }
 
-.main-banner .left-content .thumb img {
-  width: 100%;
-  overflow: hidden;
-}
-
-.main-banner .left-content .inner-content {
-  position: absolute;
-  left: 100px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.container-fluid{
+.container-fluid {
   padding: 0;
 }
 
 
-.main-banner .left-content .inner-content span {
-  font-size: 16px;
-  color: #fff;
-  font-weight: 400;
-  display: block;
-  margin-bottom: 30px;
-}
 
 .main-banner .right-content .right-first-image {
   margin-bottom: 28.5px;
 }
 
-.main-banner .right-content .right-first-image .thumb {
+.main-banner .right-content .right-first-image .image-container {
   position: relative;
   text-align: center;
 }
 
-.main-banner .right-content .right-first-image .thumb img {
+.main-banner .right-content .right-first-image .image-container img {
   width: 100%;
   overflow: hidden;
 }
 
-.main-banner .right-content .right-first-image .thumb .inner-content {
+.main-banner .right-content .right-first-image .image-container .inner-content {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -68,38 +74,57 @@
   text-align: center;
 }
 
-.main-banner .right-content .right-first-image .thumb .inner-content h4 {
+.main-banner
+  .right-content
+  .right-first-image
+  .image-container
+  .inner-content
+  h4 {
   color: #fff;
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 15px;
 }
 
-.main-banner .right-content .right-first-image .thumb .inner-content span {
+.main-banner
+  .right-content
+  .right-first-image
+  .image-container
+  .inner-content
+  span {
   font-size: 16px;
   color: #fff;
   font-style: italic;
 }
 
-.main-banner .right-content .right-first-image .thumb .hover-content {
+.main-banner .right-content .right-first-image .image-container .hover-content {
   position: absolute;
   top: 15px;
   right: 15px;
   left: 15px;
   bottom: 15px;
   text-align: center;
-  background-color: rgba(42,42,42,.97);
+  background-color: rgba(42, 42, 42, 0.97);
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s;
 }
 
-.main-banner .right-content .right-first-image .thumb:hover .hover-content {
+.main-banner
+  .right-content
+  .right-first-image
+  .image-container:hover
+  .hover-content {
   opacity: 1;
   visibility: visible;
 }
 
-.main-banner .right-content .right-first-image .thumb .hover-content .inner {
+.main-banner
+  .right-content
+  .right-first-image
+  .image-container
+  .hover-content
+  .inner {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -107,14 +132,24 @@
   width: 100%;
 }
 
-.main-banner .right-content .right-first-image .thumb .hover-content h4 {
+.main-banner
+  .right-content
+  .right-first-image
+  .image-container
+  .hover-content
+  h4 {
   color: #fff;
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 15px;
 }
 
-.main-banner .right-content .right-first-image .thumb .hover-content p {
+.main-banner
+  .right-content
+  .right-first-image
+  .image-container
+  .hover-content
+  p {
   color: #fff;
   padding: 0px 20px;
   margin-bottom: 20px;
