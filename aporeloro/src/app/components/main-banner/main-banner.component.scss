@@ -2,24 +2,67 @@
     padding-top: 130px;
   }
   .main-banner .left-content .image-container .inner-content{
-    position: absolute;
-    bottom: 10%;
-    padding-inline: 40px;
-    text-align: center;
+
   }
 
-  .main-banner .left-content .image-container {
-    width: 100%;
-    height: 450px;
-    overflow: hidden;
+  @media (min-width: 1441px){
+    .main-banner .left-content .image-container {
+      height: 600px;
+      overflow: hidden;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+    .black-overlay {
+      background: rgba(0, 0, 0, 0.7);
+      position: absolute;
+      left: 10%;
+      top: 0;
+      right: 10%;
+      bottom: 30px;
+    }
+
+    .main-banner .left-content .image-container .inner-content {
+      position: absolute;
+      bottom: 10%;
+      right: 20%;
+      /* padding-inline: 40px; */
+      text-align: center;
+      left: 20%;
+  }
   }
 
   .main-banner .left-content {
     margin-bottom: 30px;
   }
 
-@media (max-width: 767px) {
+  @media (max-width: 1440px) {
+    .main-banner .left-content .image-container {
+      width: 100%;
+      height: 450px;
+      overflow: hidden;
+    }
+    .black-overlay {
+      background: rgba(0, 0, 0, 0.7);
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0;
+      bottom: 30px;
+    }
+    .main-banner .left-content .image-container .inner-content {
+      position: absolute;
+      bottom: 10%;
+      padding-inline: 40px;
+      text-align: center;
+    }
+  }
 
+@media (max-width: 767px) {
+  .main-banner .left-content .image-container {
+    width: 100%;
+    height:auto;
+    overflow: hidden;
+  }
   .main-banner .left-content .image-container .inner-content {
     left: 50%;
     top: 47.5%;
@@ -28,24 +71,12 @@
     padding-inline: 0;
     bottom: auto;
   }
-  .main-banner .left-content .image-container {
-    width: 100%;
-    height:auto;
-    overflow: hidden;
-  }
+  .main-banner .left-content .inner-content span {
+    margin-bottom: 0;
+}
 }
 
-.black-overlay {
-  bottom: 30px;
-}
 
-.black-overlay {
-  background: rgba(0, 0, 0, 0.7);
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 0;
-}
 
 .main-banner .left-content .image-container img {
   width: 100%;
