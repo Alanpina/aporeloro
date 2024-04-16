@@ -5,7 +5,6 @@
   font-size: 28px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
   float: left;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -25,4 +24,5 @@
 .footer-logo-container .logo {
   margin: 0;
   color: white;
+  line-height: 50px;
 }

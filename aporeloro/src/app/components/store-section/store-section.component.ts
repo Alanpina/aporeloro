@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./store-section.component.scss']
 })
 export class StoreSectionComponent {
-  title : string = 'Nuestra Merch'
+  titleLine1 : string = 'Nuestra'
+  titleLine2 : string = 'Merch'
   text: string = 'Descubre La mejor selección de productos en nuestra tienda en linea. Haz click ahora para una experiencia rápida y segura. ¡Te esperamos!'
   textButton: string = 'Entrar'
 }
