@@ -47,10 +47,10 @@
       bottom: 30px;
     }
     .contact-banner .left-content .image-container .inner-content {
+      padding-top: 30px;
       position: absolute;
-      bottom: 10%;
-      padding-inline: 40px;
-      text-align: center;
+      margin-left: 10%;
+      margin-right: 10%;
     }
   }
 
@@ -64,9 +64,14 @@
     left: 50%;
     top: 47.5%;
     transform: translate(-50%, -50%);
-    text-align: center;
+    text-align: justify;
     padding-inline: 0;
     bottom: auto;
+    padding-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 30px;
+    padding-right: 30px;
   }
   .contact-banner .left-content .inner-content span {
     margin-bottom: 0;
@@ -193,4 +198,19 @@
   color: #fff;
   padding: 0px 20px;
   margin-bottom: 20px;
+}
+
+h4 {
+  color: white;
+  margin-top: -10px;
+  font-size: 52px;
+  font-weight: 700;
+}
+
+p {
+  font-size: 14px;
+  line-height: 25px;
+  color: white;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
