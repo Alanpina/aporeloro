@@ -22,6 +22,7 @@
                       class="form-control"
                       placeholder="Nombre"
                     />
+                    <app-print-error [control]="contactForm.controls['name']"></app-print-error>
                   </div>
                   <div class="col">
                     <input formControlName="email"
@@ -29,6 +30,7 @@
                       class="form-control"
                       placeholder="Correo"
                     />
+                    <app-print-error [control]="contactForm.controls['email']"></app-print-error>
                   </div>
                 </div>
                 <div class="row mt-4">
@@ -39,6 +41,7 @@
                       formControlName="message"
                       placeholder="Mensaje"
                     ></textarea>
+                    <app-print-error [control]="contactForm.controls['message']"></app-print-error>
                   </div>
                 </div>
                 <div class="row mt-4">
