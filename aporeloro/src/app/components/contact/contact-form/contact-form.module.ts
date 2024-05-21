@@ -6,6 +6,7 @@ import { ContactFormRoutingModule } from './contact-form-routing.module';
 import { RecaptchaModule, RecaptchaV3Module } from 'ng-recaptcha';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PrintErrorModule } from 'src/app/core/print-error/print-error.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { PrintErrorModule } from 'src/app/core/print-error/print-error.module';
     RecaptchaModule,
     ReactiveFormsModule,
     PrintErrorModule,
+    HttpClientModule
   ],
   declarations: [ContactFormComponent],
 })
