@@ -10,6 +10,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'media',
+    loadChildren: () =>
+      import('./components/media/media.module').then(
+        (m) => m.MediaModule
+      ),
+  },
+  {
     path: '',
     pathMatch: 'full',
     loadChildren: () =>
