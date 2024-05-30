@@ -4,7 +4,7 @@
 
   @media (min-width: 1441px){
     .contact-banner .left-content .image-container {
-      height: 600px;
+      height: 300px;
       overflow: hidden;
       margin-left: 10%;
       margin-right: 10%;
@@ -20,11 +20,11 @@
 
     .contact-banner .left-content .image-container .inner-content {
       position: absolute;
-      bottom: 10%;
       right: 20%;
       /* padding-inline: 40px; */
-      text-align: center;
       left: 20%;
+      top: 45%;
+      transform: translateY(-50%)
   }
   }
 
