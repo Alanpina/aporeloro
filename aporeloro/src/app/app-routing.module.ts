@@ -17,6 +17,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'shop',
+    loadChildren: () =>
+      import('./components/shop/shop.module').then(
+        (m) => m.ShopModule
+      ),
+  },
+  {
     path: '',
     pathMatch: 'full',
     loadChildren: () =>
