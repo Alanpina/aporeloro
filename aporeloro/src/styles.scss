@@ -1,4 +1,6 @@
 
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
 
 html, body {
   font-family: 'APORELORO', sans-serif;
@@ -9,3 +11,10 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.btn {
+  border: 3px solid;
+  border-radius: 0;
+  font-family: 'APORELORO';
+}
+
