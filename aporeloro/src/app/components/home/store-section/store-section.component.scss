@@ -10,6 +10,19 @@
 
 }
 
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  height: auto; /* Ajusta la altura si es necesario */
+  margin: 0 auto;
+  overflow: hidden;
+}
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
 h4 {
   color: black;
   margin-top: -10px;
