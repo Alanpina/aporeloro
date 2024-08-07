@@ -53,6 +53,12 @@ body {
   font-size: 24px;
 }
 
+@media (min-width: 1440px) {
+  .text-content {
+    max-width: 1200px; /* Ajusta según sea necesario */
+  }
+}
+
 @media (max-width: 1024px) {
   .text-content p {
     font-size: 14px;
