@@ -66,6 +66,9 @@ export class BreakpointObserverService {
     return this.currentSizeSignal.asReadonly()
   }
 
+  get isMobileSize(){
+    return this.currentSizeSignal() === 'xs' || this.currentSizeSignal() === 'sm'
+  }
   get isDesktopSize(){
     return this.currentSizeSignal() === 'lg' || this.currentSizeSignal() === 'xl'|| this.currentSizeSignal() === 'xxl';
   }
