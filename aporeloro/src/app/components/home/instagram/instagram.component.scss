@@ -9,11 +9,12 @@
     margin-left: auto;
   }
 
-  #social {
-    padding-bottom: 0;
-  }
 }
 
+#social {
+  padding-top: 40px;
+  padding-bottom: 0;
+}
 
 
 #social .col-2 {
@@ -64,8 +65,6 @@
   overflow: hidden;
 }
 
-.section-heading span {
-  font-size: 14px;
-  color: black;
-  font-weight: 400;
+.widget{
+  padding-top: 1.25rem;
 }

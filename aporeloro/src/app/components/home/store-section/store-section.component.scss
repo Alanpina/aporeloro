@@ -2,6 +2,10 @@
   padding-top: 80px;
  }
 
+ .card-body{
+  padding: 1.25rem 0 0 0
+}
+
 
 @media (max-width: 768px) {
   .section{
@@ -54,5 +58,25 @@
   .btn {
     position: absolute;
     bottom: 0;
+  }
+
+  .card-body {
+    padding: 0 0 0 1.25rem;
+}
+}
+
+@media (max-width: 480px) {
+  .card-body {
+    padding: 1.25rem 0 0 0;
+}
+}
+
+.card-text {
+  font-size: 24px;
+}
+
+@media (max-width: 1024px) {
+  .card-text {
+    font-size: 16px;
   }
 }

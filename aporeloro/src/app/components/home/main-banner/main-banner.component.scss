@@ -49,11 +49,6 @@ body {
   }
 }
 
-.text-content p {
-  color: #fff;
-  font-size: 24px;
-}
-
 @media (min-width: 1440px) {
   .text-content {
     max-width: 1200px; /* Ajusta según sea necesario */
@@ -66,11 +61,6 @@ body {
   }
 }
 
-@media (max-width: 1024px) {
-  .text-content p {
-    font-size: 14px;
-  }
-}
 
 @media (max-width: 768px) {
   .image-container {

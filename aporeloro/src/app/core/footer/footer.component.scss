@@ -1,7 +1,7 @@
 @media (min-width: 1441px) {
   footer {
-    margin-left: 10%;
-    margin-right: 10%;
+    max-width: 1920px;
+    margin: auto;
   }
 }
 
@@ -47,6 +47,7 @@ footer .under-footer a:hover {
 footer {
   padding: 30px 0px 30px 0px;
   background-color: #000000;
+  margin-top: 40px;
 }
 
 footer .logo {
