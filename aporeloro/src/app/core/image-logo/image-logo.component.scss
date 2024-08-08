@@ -1,0 +1,28 @@
+.logo {
+  line-height: 100px;
+  float: left;
+}
+
+
+@media (max-width: 767px) {
+.logo {
+    color: #1e1e1e;
+    margin-left: 30px;
+  }
+
+
+
+}
+
+@media (max-width: 480px) {
+  .logo {
+    color: #1e1e1e;
+    margin-left: 0;
+  }
+
+ }
+.footer-logo-container .logo {
+  margin: 0;
+  color: white;
+  line-height: 50px;
+}

@@ -1,4 +1,4 @@
-@media (min-width: 1441px){
+@media (min-width: 1441px) {
   footer {
     margin-left: 10%;
     margin-right: 10%;
@@ -10,18 +10,20 @@ footer .under-footer {
   text-align: center;
 }
 
-footer .under-footer ul, footer .under-footer-points ul {
+footer .under-footer ul,
+footer .under-footer-points ul {
   margin-top: 15px;
 }
 
-footer .under-footer ul li, footer .under-footer-points ul li {
+footer .under-footer ul li,
+footer .under-footer-points ul li {
   display: inline-block;
   margin: 0px 10px;
 }
 
-footer .under-footer-points ul li{
+footer .under-footer-points ul li {
   font-size: 8px;
-  color: #fff
+  color: #fff;
 }
 
 footer .under-footer ul li a {
@@ -44,7 +46,7 @@ footer .under-footer a:hover {
 
 footer {
   padding: 30px 0px 30px 0px;
-  background-color: #2a2a2a;
+  background-color: #000000;
 }
 
 footer .logo {
@@ -58,7 +60,7 @@ footer ul li {
 footer ul li a {
   font-size: 13px;
   color: #fff;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 footer ul li a:hover {
@@ -78,6 +80,16 @@ footer h4 {
   justify-content: center;
 }
 
-.container{
+.container {
   text-align: center;
+}
+
+:host ::ng-deep {
+  img {
+    filter: invert(1);
+  }
+}
+
+ul{
+  padding-left: 0;
 }

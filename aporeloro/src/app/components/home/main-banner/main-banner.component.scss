@@ -16,7 +16,8 @@ body {
 }
 .image-container img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 .overlay {
   position: absolute;
@@ -41,10 +42,10 @@ body {
 }
 @media (max-width: 1440px) {
   .image-container {
-      height: auto; /* Ajusta la altura para dispositivos móviles */
+    height: auto; /* Ajusta la altura para dispositivos móviles */
   }
   .text-content {
-      padding: 10px; /* Reduce el padding en dispositivos móviles */
+    padding: 10px; /* Reduce el padding en dispositivos móviles */
   }
 }
 
@@ -59,6 +60,12 @@ body {
   }
 }
 
+@media (min-width: 1400px) {
+  .text-content {
+    max-width: 1320px;
+  }
+}
+
 @media (max-width: 1024px) {
   .text-content p {
     font-size: 14px;
@@ -67,17 +74,21 @@ body {
 
 @media (max-width: 768px) {
   .image-container {
-      height: auto; /* Ajusta la altura para dispositivos móviles */
+    height: 400px; /* Ajusta la altura para dispositivos móviles */
   }
   .text-content {
-      max-width: 90%; /* Ajusta el ancho máximo en dispositivos móviles */
-      padding: 10px; /* Reduce el padding en dispositivos móviles */
+    max-width: 90%; /* Ajusta el ancho máximo en dispositivos móviles */
+    padding: 10px; /* Reduce el padding en dispositivos móviles */
   }
 }
+
 @media (max-width: 480px) {
+  .image-container {
+    height: 300px; /* Ajusta la altura para dispositivos muy pequeños */
+  }
   .text-content {
-      max-width: 100%; /* Ajusta el ancho máximo en dispositivos muy pequeños */
-      padding: 5px; /* Reduce aún más el padding en dispositivos muy pequeños */
+    max-width: 100%; /* Ajusta el ancho máximo en dispositivos muy pequeños */
+    padding: 5px; /* Reduce aún más el padding en dispositivos muy pequeños */
   }
 
   .text-content p {

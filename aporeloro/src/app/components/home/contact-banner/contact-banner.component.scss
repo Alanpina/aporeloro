@@ -1,225 +1,77 @@
-  .contact-banner {
-    padding-top: 130px;
-  }
-
-  @media (min-width: 1441px){
-    .contact-banner .left-content .image-container {
-      height: 300px;
-      overflow: hidden;
-      margin-left: 10%;
-      margin-right: 10%;
-    }
-    .black-overlay {
-      background: rgba(0, 0, 0, 0.7);
-      position: absolute;
-      left: 10%;
-      top: 0;
-      right: 10%;
-      bottom: 30px;
-    }
-
-    .contact-banner .left-content .image-container .inner-content {
-      position: absolute;
-      right: 20%;
-      /* padding-inline: 40px; */
-      left: 20%;
-      top: 45%;
-      transform: translateY(-50%)
-  }
-  }
-
-  .contact-banner .left-content {
-    margin-bottom: 30px;
-  }
-
-  @media (max-width: 1440px) {
-    .contact-banner .left-content .image-container {
-      width: 100%;
-      height: 300px;
-      overflow: hidden;
-    }
-    .black-overlay {
-      background: rgba(0, 0, 0, 0.7);
-      position: absolute;
-      width: 100%;
-      left: 0;
-      top: 0;
-      bottom: 30px;
-    }
-    .contact-banner .left-content .image-container .inner-content {
-      padding-top: 30px;
-      position: absolute;
-      margin-left: 10%;
-      margin-right: 10%;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    .contact-banner .left-content .image-container .inner-content {
-      padding-top: 30px;
-      position: absolute;
-      margin-left: 25px;
-      margin-right: 25px;
-    }
-  }
-
-@media (max-width: 767px) {
-  .contact-banner .left-content .image-container {
-    width: 100%;
-    height:auto;
-    overflow: hidden;
-  }
-  .contact-banner .left-content .image-container .inner-content {
-    left: 50%;
-    top: 47.5%;
-    transform: translate(-50%, -50%);
-    text-align: justify;
-    padding-inline: 0;
-    bottom: auto;
-    padding-top: 0;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-  .contact-banner .left-content .inner-content span {
-    margin-bottom: 0;
-}
-}
-
-
-
-.contact-banner .left-content .image-container img {
-  width: 100%;
-  overflow: hidden;
-}
-
-.container-fluid {
-  padding: 0;
-}
-
-.contact-banner .left-content .inner-content span {
-  font-size: 16px;
-  color: #fff;
-  font-weight: 400;
-  display: block;
-  margin-bottom: 30px;
-}
-
-.contact-banner .right-content .right-first-image {
-  margin-bottom: 28.5px;
-}
-
-.contact-banner .right-content .right-first-image .image-container {
+.image-container {
   position: relative;
-  text-align: center;
-}
-
-.contact-banner .right-content .right-first-image .image-container img {
   width: 100%;
+  max-width: 1920px;
+  height: 474px; /* Ajusta la altura si es necesario */
+  margin: 0 auto;
   overflow: hidden;
 }
-
-.contact-banner .right-content .right-first-image .image-container .inner-content {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.image-container img {
   width: 100%;
-  text-align: center;
+  height: 100%;
+  object-fit: cover;
 }
-
-.contact-banner
-  .right-content
-  .right-first-image
-  .image-container
-  .inner-content
-  h4 {
-  color: #fff;
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-
-.contact-banner
-  .right-content
-  .right-first-image
-  .image-container
-  .inner-content
-  span {
-  font-size: 16px;
-  color: #fff;
-  font-style: italic;
-}
-
-.contact-banner .right-content .right-first-image .image-container .hover-content {
+.overlay {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  left: 15px;
-  bottom: 15px;
-  text-align: center;
-  background-color: rgba(42, 42, 42, 0.97);
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.5s;
-}
-
-.contact-banner
-  .right-content
-  .right-first-image
-  .image-container:hover
-  .hover-content {
-  opacity: 1;
-  visibility: visible;
-}
-
-.contact-banner
-  .right-content
-  .right-first-image
-  .image-container
-  .hover-content
-  .inner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
   width: 100%;
-}
-
-.contact-banner
-  .right-content
-  .right-first-image
-  .image-container
-  .hover-content
-  h4 {
-  color: #fff;
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-
-.contact-banner
-  .right-content
-  .right-first-image
-  .image-container
-  .hover-content
-  p {
-  color: #fff;
-  padding: 0px 20px;
-  margin-bottom: 20px;
-}
-
-h4 {
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad aquí */
   color: white;
-  margin-top: -10px;
-  font-size: 52px;
-  font-weight: 700;
+  display: flex;
+  align-items: flex-end; /* Alinea el contenido al fondo */
+  padding: 20px;
+  box-sizing: border-box;
+}
+.text-content {
+  width: 100%;
+  max-width: 800px; /* Ajusta según sea necesario */
+  text-align: left;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 50% 3% 15%;
 }
 
-p {
-  font-size: 14px;
-  line-height: 25px;
-  color: white;
-  margin-bottom: 15px;
-  margin-top: 15px;
+@media (min-width: 1400px) {
+  .text-content {
+    max-width: 1320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-container {
+    height: 400px; /* Ajusta la altura para dispositivos móviles */
+  }
+  .text-content {
+    max-width: 90%; /* Ajusta el ancho máximo en dispositivos móviles */
+    padding: 10px; /* Reduce el padding en dispositivos móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  button{
+    display: block;
+    width: 100%;
+  }
+  .overlay {
+    padding: 12px;
+  }
+
+  .mt-4 {
+    margin: 0.5rem 0 0.5rem 0 !important;
+  }
+
+  .image-container {
+    height: 300px; /* Ajusta la altura para dispositivos muy pequeños */
+  }
+  .text-content {
+    max-width: 100%; /* Ajusta el ancho máximo en dispositivos muy pequeños */
+    padding: 0; /* Reduce aún más el padding en dispositivos muy pequeños */
+    margin: 0;
+  }
+
+  .text-content p {
+    margin: 0;
+  }
 }

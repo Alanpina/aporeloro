@@ -93,11 +93,6 @@ ul {
   margin-bottom: 0px;
 }
 
-p {
-  font-size: 14px;
-  line-height: 25px;
-  color: #2a2a2a;
-}
 
 /*
 ---------------------------------------------
@@ -362,7 +357,7 @@ header
   height: 40px;
   text-indent: -9999em;
   z-index: 99;
-  right: 40px;
+  right: 0;
   display: none;
 }
 
@@ -1513,14 +1508,7 @@ About Us Page
 ---------------------------------------------
 */
 
-.about-page-heading {
-  margin-top: 160px;
-  margin-bottom: 30px;
-  background-image: url(../images/about-us-page-heading.jpg);
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+
 
 .about-us {
   margin-top: 80px;

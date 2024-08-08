@@ -5,7 +5,6 @@ import { BreakpointObserverService } from 'src/app/core/breakpoint-observer/brea
   selector: 'app-main-banner',
   templateUrl: './main-banner.component.html',
   styleUrls: ['./main-banner.component.scss'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class MainBannerComponent  {
   constructor(private breakPoint: BreakpointObserverService) {}
