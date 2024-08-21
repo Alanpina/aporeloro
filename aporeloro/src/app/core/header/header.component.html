@@ -6,10 +6,9 @@
                 <app-image-logo></app-image-logo>
                   <!-- ***** Menu Start ***** -->
                   <ul class="nav" [class.opened]="menuOpened">
-                      <li class="scroll-to-section"><a href="#top" class="active">INICIO</a></li>
-                      <li class="scroll-to-section"><a href="/media">MEDIA</a></li>
-                      <li class="scroll-to-section"><a href="/shop">TIENDA</a></li>
-                      <li class="scroll-to-section"><a href="/contact">CONTACTO</a></li>
+                    <li class="scroll-to-section" *ngFor="let item of menuItems" (click)="setActive(item)">
+                      <a [routerLink]="item.link" [ngClass]="{'active': activeItem === item}">{{ item.label }}</a>
+                    </li>
                   </ul>
                   <a class='menu-trigger' [ngClass]="{'active': menuOpened}" (click)="onHamburgerClick()">
                       <span>Menu</span>

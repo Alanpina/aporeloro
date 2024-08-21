@@ -2,11 +2,11 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { HeaderComponent } from './header.component';
-import { TextLogoModule } from '../text-logo/text-logo.module';
 import { ImageLogoModule } from '../image-logo/image-logo.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  imports: [CommonModule, ImageLogoModule],
+  imports: [CommonModule, ImageLogoModule, RouterModule],
   declarations: [HeaderComponent],
   exports: [HeaderComponent],
 })
