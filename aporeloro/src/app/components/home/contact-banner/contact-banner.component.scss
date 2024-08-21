@@ -30,7 +30,7 @@
   text-align: left;
   padding: 20px;
   box-sizing: border-box;
-  margin: 0 50% 3% 15%;
+  margin: 0 50% 0% 15%;
 }
 
 @media (min-width: 1400px) {
@@ -78,4 +78,35 @@
 
 .contact-banner{
   padding-top: 40px;
+}
+
+.btn, .form-control{
+  color: white;
+  background-color: transparent;
+}
+
+.form-control{
+  width: 301px;
+}
+
+input::-ms-input-placeholder {
+  color: white;
+}
+
+/* For Firefox */
+input::-moz-placeholder {
+  color: white;
+}
+
+/* For Safari */
+input::-webkit-input-placeholder {
+  color: white;
+}
+
+
+:host ::ng-deep{
+  .rc-anchor-light {
+    background: transparent !important;
+    color: white !important;
+  }
 }

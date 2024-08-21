@@ -8,10 +8,33 @@
             <div class="text-content">
               <h4>{{ titleLine1 }}</h4>
               <h4>{{ titleLine2 }}</h4>
-              <p class="mt-4">{{text}}</p>
-              <button type="button" class="mt-4 btn btn-outline-light">
-                {{textButton}}
-              </button>
+              <p class="mt-4">{{ text }}</p>
+              <form [formGroup]="contactForm">
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                  <input
+                    formControlName="email"
+                    type="text"
+                    class="form-control"
+                    placeholder="Correo"
+                  />
+                  <re-captcha
+                  (resolved)="resolved($event)"
+                  siteKey="6Lc6yNEpAAAAAAu03gf6Q1Nxle2XrGRaRDU9obEd"
+                ></re-captcha>
+                </div>
+                <app-print-error
+                  [control]="contactForm.controls['email']"
+                ></app-print-error>
+                <button
+                  #button
+                  type="button"
+                  class="btn btn-outline-dark mt-4"
+                  [disabled]="buttonDisabled"
+                  (click)="sendEmail()"
+                >
+                  {{ textButton }}
+                </button>
+              </form>
             </div>
           </div>
         </div>
