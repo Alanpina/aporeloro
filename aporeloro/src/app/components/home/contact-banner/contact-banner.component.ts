@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { take } from 'rxjs';
 import Swal from 'sweetalert2';
@@ -10,16 +10,17 @@ import Swal from 'sweetalert2';
   styleUrl: './contact-banner.component.scss',
 })
 export class ContactBannerComponent {
+  @Input() titleLine1 = 'Cotiza tu';
+  @Input() titleLine2 = 'producción';
+  @Input() textButton = 'A POR EL ORO';
+  @Input() img = 'assets/images/CotizaCta.jpg'
+  @Input() text =
+  'Deja tu correo y te enviaremos información para cotizar. ¡Estamos Ansiosos de ayudarte a lograr tus objetivos!';
   constructor(private httpClient: HttpClient) {}
 
   contactForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.email, Validators.max(50)]),
   });
-  titleLine1 = 'Cotiza tu';
-  titleLine2 = 'producción';
-  text =
-    'Deja tu correo y te enviaremos información para cotizar. ¡Estamos Ansiosos de ayudarte a lograr tus objetivos!';
-  textButton = 'A POR EL ORO';
 
   get buttonDisabled() {
     return this.contactForm.invalid;

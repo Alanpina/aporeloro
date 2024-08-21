@@ -11,4 +11,6 @@ export class ContactBannerEmailComponent {
   titleLine2= 'y recibe novedades'
   text = 'Deja tu correo y te enviaremos información para cotizar. ¡Estamos Ansiosos de ayudarte a lograr tus objetivos!'
   textButton = 'QUIERO SABER'
+  img = 'assets/images/CorreoCta.jpg'
+
 }
