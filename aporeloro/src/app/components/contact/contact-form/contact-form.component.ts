@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { take } from 'rxjs';
+import { SectionValues } from 'src/app/core/sections.interface';
+import { SectionsService } from 'src/app/core/sections.service';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-contact-form',
@@ -9,7 +11,10 @@ import Swal from 'sweetalert2';
   styleUrl: './contact-form.component.scss',
 })
 export class ContactFormComponent implements OnInit {
-  constructor(private httpClient: HttpClient) {}
+  constructor(
+    private httpClient: HttpClient,
+    private sections: SectionsService
+  ) {}
   buttonText: string = 'Enviar';
   contactForm: FormGroup = new FormGroup({
     name: new FormControl('', [
@@ -21,14 +26,22 @@ export class ContactFormComponent implements OnInit {
     message: new FormControl('', [Validators.required, Validators.max(400)]),
     resolvedCaptcha: new FormControl('', [Validators.required]),
   });
-  ngOnInit(): void {}
+
+  ngOnInit() {
+    this.sections.setActive(SectionValues.CONTACTO);
+  }
 
   get buttonDisabled() {
     return this.contactForm.invalid;
   }
 
   sendEmail() {
-    Swal.fire({allowOutsideClick:false, didOpen: () => { Swal.showLoading(null);}})
+    Swal.fire({
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading(null);
+      },
+    });
     //this.httpClient.post('https://aporeloro.com/laravel/public/api/contact-form', this.contactForm.value).pipe(take(1)).subscribe((data)=>{
     this.httpClient
       .post('http://localhost:8000/api/contact-form', this.contactForm.value)
@@ -43,8 +56,7 @@ export class ContactFormComponent implements OnInit {
             showConfirmButton: false,
             timer: 3500,
           });
-        }
-        else{
+        } else {
           Swal.fire({
             title: 'Hubo un error al ponerte en contacto',
             icon: 'error',

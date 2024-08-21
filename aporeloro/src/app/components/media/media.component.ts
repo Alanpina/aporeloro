@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SectionValues } from 'src/app/core/sections.interface';
+import { SectionsService } from 'src/app/core/sections.service';
 
 @Component({
   selector: 'app-media',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MediaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sections : SectionsService) { }
 
   ngOnInit() {
+    this.sections.setActive(SectionValues.MEDIA);
   }
 
 }
