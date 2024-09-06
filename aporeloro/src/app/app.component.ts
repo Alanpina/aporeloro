@@ -2,11 +2,10 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
-  Input,
   OnInit,
-  Renderer2,
   ViewChild,
 } from '@angular/core';
+import * as Aos from 'aos';
 import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-root',
@@ -30,6 +29,7 @@ export class AppComponent implements OnInit , AfterViewInit {
 
   ngOnInit(): void {
     this.startAnimation(this.phrase);
+    Aos.init();
   }
 
   ngAfterViewInit(): void {

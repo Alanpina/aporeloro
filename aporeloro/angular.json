@@ -35,6 +35,7 @@
               "src/assets/fontawesome/scss/fontawesome.scss",
               "src/assets/fontawesome/scss/brands.scss",
               "src/assets/fontawesome/scss/solid.scss",
+              "node_modules/aos/dist/aos.css",
               "src/styles.scss"
             ],
             "scripts": [
@@ -51,7 +52,8 @@
               "src/assets/js/slick.js",
               "src/assets/js/lightbox.js",
               "src/assets/js/isotope.js",
-              "src/assets/js/custom.js"
+              "src/assets/js/custom.js",
+              "node_modules/aos/dist/aos.js"
             ]
           },
           "configurations": {
