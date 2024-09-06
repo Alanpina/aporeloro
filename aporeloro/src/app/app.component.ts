@@ -29,7 +29,9 @@ export class AppComponent implements OnInit , AfterViewInit {
 
   ngOnInit(): void {
     this.startAnimation(this.phrase);
-    Aos.init();
+    Aos.init({
+      once:true
+    });
   }
 
   ngAfterViewInit(): void {
