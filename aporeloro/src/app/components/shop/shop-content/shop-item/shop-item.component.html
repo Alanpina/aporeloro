@@ -1,64 +1,21 @@
-<div class="item-container">
-  <div class="item">
-    <div class="thumb">
-      <div class="hover-content">
-        <ul>
-          <li>
-            <a (click)="openModal(content)"
-              ><i class="fa fa-eye"></i
-            ></a>
-          </li>
-        </ul>
-      </div>
-      <img src="{{imageUrl}}" alt="" />
+<div class="product-card">
+  <div class="product-image-container">
+    <div class="image-wrapper">
+      <img [src]="'assets/images/products/' + imageName" [alt]="text" class="product-image">
     </div>
-    <div class="down-content">
-      <h4>{{text}}</h4>
-      <span>{{price}}</span>
+    <div class="product-badge" *ngIf="isNew">Nuevo</div>
+  </div>
+  <div class="product-info">
+    <h3 class="product-title">{{text}}</h3>
+    <p class="product-category">{{category}}</p>
+    <div class="product-price">
+      <span class="current-price">${{price.toLocaleString()}}</span>
+      <span class="original-price" *ngIf="originalPrice">${{originalPrice.toLocaleString()}}</span>
+    </div>
+    <div class="product-colors" *ngIf="colors && colors.length > 0">
+      <span class="color-option" *ngFor="let color of colors"
+            [style.background-color]="color"
+            [class.selected]="selectedColor === color"></span>
     </div>
   </div>
 </div>
-
-<ng-template #content let-modal>
-	<div class="modal-header">
-		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-	</div>
-	<div class="modal-body">
-    <div style="display: flex; flex-direction: row;">
-      <div style="display: flex;flex-direction: column;max-width: 350px;">
-        <div>
-          <img src="{{imageUrl}}" alt="">
-
-        </div>
-        <div>
-          <img src="{{imageUrl}}" alt="">
-        </div>
-      </div>
-      <div style="flex-grow: 1; margin-left: 50px;">
-        <div style="display: flex; flex-direction: column;">
-          <label>Make It Rain</label>
-          <label>$300</label>
-          <div style="display: flex; flex-direction: column;">
-            <label style="margin-bottom: 0;">frase 1</label>
-            <label style="margin-bottom: 0;">frase 2</label>
-            <label style="margin-bottom: 0;">frase 3</label>
-            <label style="margin-bottom: 0;">frase 4</label>
-            <label style="margin-bottom: 0;">frase 5</label>
-            <label style="margin-bottom: 0;">frase 6</label>
-            <label style="margin-bottom: 0;">frase 7</label>
-          </div>
-        </div>
-        <div>
-          <div style="display: flex; flex-direction: column; margin-top: 50px;">
-            <label>Comprar Via</label>
-            <button type="button" class="btn btn-outline-dark">Instagram</button>
-            <button type="button" class="btn btn-outline-dark">Whatsapp</button>
-          </div>
-        </div>
-      </div>
-    </div>
-	</div>
-	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-secondary" (click)="modal.close('Save click')">Save</button>
-	</div>
-</ng-template>

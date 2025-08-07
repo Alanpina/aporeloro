@@ -10,12 +10,12 @@ import Swal from 'sweetalert2';
   styleUrl: './contact-banner.component.scss',
 })
 export class ContactBannerComponent {
-  @Input() titleLine1 = 'Cotiza tu';
-  @Input() titleLine2 = 'producción';
+  @Input() titleLine1 = 'Déjame';
+  @Input() titleLine2 = 'tu correo';
   @Input() textButton = 'A POR EL ORO';
   @Input() img = 'assets/images/CotizaCta.jpg'
   @Input() text =
-  'Deja tu correo y te enviaremos información para cotizar. ¡Estamos Ansiosos de ayudarte a lograr tus objetivos!';
+  'Y recibe novedades del taller: merch, lanzamientos y más';
   constructor(private httpClient: HttpClient) {}
 
   contactForm: FormGroup = new FormGroup({

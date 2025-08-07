@@ -1,16 +1,22 @@
-<section class="section" id="store">
+<section class="store-section" id="store">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="">
-          <div class="">
-            <ng-container *ngFor="let item of items">
-              <app-shop-item [imageName]="item.imageName" [price]="item.price" [text]="item.text"></app-shop-item>
-            </ng-container>
-          </div>
-        </div>
-      </div>
+    <div class="section-header">
+      <h2 class="section-title">Esta es la merch. </h2>
+      <p class="section-subtitle">Pocas piezas disponibles. Sin reimpresiones.</p>
     </div>
 
+    <div class="product-grid">
+      <ng-container *ngFor="let item of items">
+        <app-shop-item
+          [imageName]="item.imageName"
+          [price]="item.price"
+          [originalPrice]="item.originalPrice"
+          [text]="item.text"
+          [category]="item.category"
+          [colors]="item.colors"
+          [isNew]="item.isNew || false">
+        </app-shop-item>
+      </ng-container>
+    </div>
   </div>
 </section>
