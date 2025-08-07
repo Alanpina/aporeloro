@@ -1,23 +1,30 @@
-<section class="section" id="store-section">
-  <div class="container">
-    <div>
-      <div class="card">
-        <div class="row g-0">
-          <div class="col-md-6 col-lg-6">
-            <div class="image-container">
-              <img src="assets/images/NuestraMerch.jpg" alt="Nuestra Merch" />
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-6">
-            <div class="card-body">
-              <h4>{{ titleLine1 }}</h4>
-              <h4>{{ titleLine2 }}</h4>
-              <p class="card-text">{{ text }}</p>
-              <button type="button" class="btn btn-outline-dark">
-                {{ textButton }}
-              </button>
-            </div>
-          </div>
+<section class="featured-products">
+  <h2 class="section-title">Nuestra Merch</h2>
+
+  <div class="product-grid">
+    <div class="product-card"
+         *ngFor="let product of products"
+         (click)="navigateToShop(product.id)"
+         (mouseenter)="toggleProductImage(product, true)"
+         (mouseleave)="toggleProductImage(product, false)">
+
+      <div class="product-image-container">
+        <img [src]="product.primaryImage"
+             [alt]="product.name"
+             class="primary-image">
+        <img [src]="product.hoverImage"
+             [alt]="product.name"
+             class="hover-image">
+      </div>
+
+      <div class="product-info">
+        <div class="visible-info">
+          <h3>{{product.name}}</h3>
+        </div>
+        <div class="hidden-colors">
+          <span *ngFor="let color of product.colors"
+                [style.background-color]="color"
+                class="color-option"></span>
         </div>
       </div>
     </div>
