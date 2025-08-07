@@ -1,21 +1,24 @@
-<header class="header-area header-sticky">
-  <div class="container">
-      <div class="row">
-          <div class="col-12">
-              <nav class="main-nav">
-                <app-image-logo></app-image-logo>
-                  <!-- ***** Menu Start ***** -->
-                  <ul class="nav" [class.opened]="menuOpened">
-                    <li class="scroll-to-section" *ngFor="let item of menuItems" (click)="setActive(item)">
-                      <a [routerLink]="item.link" [ngClass]="{'active': activeItem === item}">{{ item.label }}</a>
-                    </li>
-                  </ul>
-                  <a class='menu-trigger' [ngClass]="{'active': menuOpened}" (click)="onHamburgerClick()">
-                      <span>Menu</span>
-                  </a>
-                  <!-- ***** Menu End ***** -->
-              </nav>
-          </div>
+<header class="main-header solid-header">
+  <div class="header-container">
+    <nav class="navbar">
+      <div class="logo-container">
+        <app-text-logo></app-text-logo>
       </div>
+
+      <ul class="nav-menu" [class.opened]="menuOpened">
+        <li class="nav-item" *ngFor="let item of menuItems" (click)="setActive(item)">
+          <a [routerLink]="item.link" [ngClass]="{'active': activeItem === item}" class="nav-link">
+            {{ item.label }}
+            <span class="link-underline"></span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="hamburger-menu" [ngClass]="{'active': menuOpened}" (click)="onHamburgerClick()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
   </div>
 </header>

@@ -1,6 +1,5 @@
 .logo {
-  line-height: 100px;
-  color: var(--gray-dark);
+  color: var(--bs-black);
   font-family: "APORELORO", sans-serif;
   font-size: 28px;
   font-weight: 700;
@@ -10,6 +9,9 @@
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+  span {
+    font-size: 3vh;
+  }
 }
 
 

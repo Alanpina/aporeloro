@@ -182,44 +182,12 @@ header
 ---------------------------------------------
 */
 
-.background-header {
-  border-bottom: none !important;
-  background-color: #fff;
-  height: 80px!important;
-  position: fixed!important;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.15)!important;
-}
-
-.background-header .logo,
-.background-header .main-nav .nav li a {
-  color: #1e1e1e!important;
-}
-
-.background-header .main-nav .nav li:hover a {
-  color: #2a2a2a!important;
-}
-
-.background-header .nav li a.active {
-  color: #2a2a2a!important;
-}
-
 
 .header-area .main-nav {
   min-height: 80px;
   background: transparent;
 }
 
-
-.background-header .main-nav .logo {
-  line-height: 75px;
-}
-
-.background-header .nav {
-  margin-top: 20px !important;
-}
 
 .header-area .main-nav .nav {
   float: right;
@@ -268,11 +236,6 @@ header
   color: #aaa!important;
 }
 
-.background-header .main-nav .nav li:hover a,
-.background-header .main-nav .nav li a.active {
-  color: #aaa!important;
-  opacity: 1;
-}
 
 .header-area .main-nav .nav li.submenu {
   position: relative;
@@ -287,10 +250,6 @@ header
   position: absolute;
   right: 18px;
   top: 12px;
-}
-
-.background-header .main-nav .nav li.submenu:after {
-  color: #2a2a2a;
 }
 
 .header-area .main-nav .nav li.submenu ul {
@@ -361,10 +320,6 @@ header
   display: none;
 }
 
-.background-header .main-nav .menu-trigger {
-  top: 23px;
-}
-
 .header-area .main-nav .menu-trigger span,
 .header-area .main-nav .menu-trigger span:before,
 .header-area .main-nav .menu-trigger span:after {
@@ -380,11 +335,6 @@ header
   left: 0;
 }
 
-.background-header .main-nav .menu-trigger span,
-.background-header .main-nav .menu-trigger span:before,
-.background-header .main-nav .menu-trigger span:after {
-  background-color: #1e1e1e;
-}
 
 .header-area .main-nav .menu-trigger span:before,
 .header-area .main-nav .menu-trigger span:after {
@@ -399,11 +349,6 @@ header
   height: 2px;
   left: 0;
   width: 75%;
-}
-
-.background-header .main-nav .menu-trigger span:before,
-.background-header .main-nav .menu-trigger span:after {
-  background-color: #1e1e1e;
 }
 
 .header-area .main-nav .menu-trigger span:before,
@@ -447,9 +392,6 @@ header
   background-color: #1e1e1e;
 }
 
-.background-header .main-nav .menu-trigger.active span:before {
-  background-color: #1e1e1e;
-}
 
 .header-area .main-nav .menu-trigger.active span:after {
   -moz-transform: translateY(-6px) translateX(1px) rotate(-45deg);
@@ -459,9 +401,6 @@ header
   background-color: #1e1e1e;
 }
 
-.background-header .main-nav .menu-trigger.active span:after {
-  background-color: #1e1e1e;
-}
 
 .header-area.header-sticky {
   min-height: 80px;
