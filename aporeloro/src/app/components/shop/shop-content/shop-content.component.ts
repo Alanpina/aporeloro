@@ -13,7 +13,6 @@ export class ShopContentComponent implements OnInit {
       originalPrice: 350,
       text: 'MakeItRain',
       category: 'Playeras',
-      colors: ['#FFFFFF'],
       isNew: true
     },
     {
@@ -21,7 +20,6 @@ export class ShopContentComponent implements OnInit {
       price: 280,
       text: 'IntoTheMind',
       category: 'Playeras',
-      colors: ['#000000'],
       isNew: true
     },
     {
@@ -30,22 +28,19 @@ export class ShopContentComponent implements OnInit {
       originalPrice: 500,
       text: 'PezGallo',
       category: 'Playeras',
-      colors: ['#FFFFFF', '#000000']
     },
     {
       imageName: 'preventa1.png',
       price: 300,
       text: 'APorElOro',
       category: 'Camisetas',
-      colors: ['#5f6857']
     },
     {
       imageName: 'product-1B.png',
       price: 320,
       text: 'SuperLatino',
       category: 'Playeras',
-      colors: ['#000000', '#2F4F4F'],
-      isNew: true
+      isNew: false
     },
     {
       imageName: 'stickers1.png',
@@ -53,7 +48,6 @@ export class ShopContentComponent implements OnInit {
       originalPrice: 150,
       text: 'StickerPack',
       category: 'stickers',
-      colors: ['#000000', '#FFFFFF']
     }
   ];
 

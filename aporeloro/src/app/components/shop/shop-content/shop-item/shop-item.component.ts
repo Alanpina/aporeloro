@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input, TemplateRef } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-shop-item',
@@ -13,11 +14,32 @@ export class ShopItemComponent {
   @Input() category: string = '';
   @Input() colors: string[] = [];
   @Input() isNew: boolean = false;
+  @Input() type :string = 'png'
 
+
+  imageUrl: string = ''
+
+  private modalService = inject(NgbModal);
+	closeResult = '';
   selectedColor: string = '';
   isInWishlist: boolean = false;
 
   toggleWishlist() {
     this.isInWishlist = !this.isInWishlist;
+  }
+
+  ngOnInit() {
+    this.imageUrl = `assets/images/${this.imageName}.${this.type}`
+  }
+
+  openModal(content: TemplateRef<any>){
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', size: 'lg', centered: true }).result.then(
+			(result) => {
+				this.closeResult = `Closed with: ${result}`;
+			},
+			(reason) => {
+				// this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+			},
+		);
   }
 }

@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class ContactBannerEmailComponent {
 
-  titleLine1= 'Deja tu correo'
-  titleLine2= 'y recibe novedades'
+  titleLine1= 'Déjame tu correo'
+  titleLine2= ''
   text = ''
   textButton = 'Enviar'
   img = 'assets/images/CorreoCta.jpg'
