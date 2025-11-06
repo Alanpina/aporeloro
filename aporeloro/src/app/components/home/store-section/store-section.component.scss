@@ -1,17 +1,16 @@
-.section{
+.section {
   padding-top: 80px;
- }
-
- .card-body{
-  padding: 1.25rem 0 0 0
 }
 
+.card-body {
+  padding: 1.25rem 0 0 0;
+  text-align: justify;
+}
 
 @media (max-width: 768px) {
-  .section{
+  .section {
     padding-top: 40px;
-   }
-
+  }
 }
 
 .image-container {
@@ -27,15 +26,14 @@
   height: auto;
 }
 
-
 .btn {
-  margin-top: 5vh;
   border: 3px solid;
   border-radius: 0;
-  font-family: 'APORELORO';
+  font-family: "APORELORO";
+  width: 10svw;
 }
 
-.card{
+.card {
   border: 0;
 }
 
@@ -45,10 +43,10 @@
     width: 100%;
   }
 
-  .store-session{
+  .store-session {
     padding-top: 30px;
   }
-  .card-body{
+  .card-body {
     padding-left: 0;
     padding-right: 0;
   }
@@ -56,23 +54,26 @@
 
 @media (min-width: 768px) {
   .btn {
-    position: absolute;
-    bottom: 0;
   }
 
   .card-body {
     padding: 0 0 0 1.25rem;
-}
+  }
 }
 
 @media (max-width: 480px) {
   .card-body {
     padding: 1.25rem 0 0 0;
-}
+  }
 }
 
 .card-text {
   font-size: 24px;
+}
+
+.card-text-1 {
+  font-size: 24px;
+  margin-bottom: unset;
 }
 
 @media (max-width: 1024px) {
@@ -82,7 +83,12 @@
 }
 
 @media (min-width: 1400px) {
-    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
-        max-width: 1395px;
-    }
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1395px;
+  }
 }

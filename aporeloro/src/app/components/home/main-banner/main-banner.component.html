@@ -1,6 +1,10 @@
 <div class="main-banner" [class.mobile-view]="isMobileSize" id="top">
   <div class="image-container">
-    <img src="assets/images/BanerIndex3.jpg" alt="Estudio de serigrafía enfocado en desarrollo de merch" loading="eager">
+    <img
+      src="assets/images/BanerIndex3.jpg"
+      alt="Estudio de serigrafía enfocado en desarrollo de merch"
+      loading="eager"
+    />
 
     <div class="overlay">
       <div class="text-content">
@@ -9,7 +13,9 @@
         </ng-container>
 
         <ng-template #desktopView>
-          <p class="line-1">{{ bannerTexts.desktop.line1 }}</p>
+          <div class="logo">
+            <img src="assets/images/LogoHeader.png" alt="" />
+          </div>
           <p class="line-2">{{ bannerTexts.desktop.line2 }}</p>
         </ng-template>
       </div>
