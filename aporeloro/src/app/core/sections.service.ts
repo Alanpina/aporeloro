@@ -1,6 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { MenuItem } from './sections.interface';
-import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +9,6 @@ export class SectionsService {
     { label: 'INICIO', link: '/' },
     { label: 'MEDIA', link: '/media' },
     { label: 'TIENDA', link: '/shop' },
-    { label: 'CONTACTO', link: '/contact' }
   ];
   private activeSectionChanged: EventEmitter<MenuItem> = new EventEmitter()
 

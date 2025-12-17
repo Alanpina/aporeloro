@@ -5,6 +5,9 @@
 .card-body {
   padding: 1.25rem 0 0 0;
   text-align: justify;
+  h4 {
+    margin-bottom: -5px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -37,20 +40,7 @@
   border: 0;
 }
 
-@media (max-width: 767px) {
-  .btn {
-    display: block;
-    width: 100%;
-  }
 
-  .store-session {
-    padding-top: 30px;
-  }
-  .card-body {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
 
 @media (min-width: 768px) {
   .btn {
@@ -73,12 +63,33 @@
 
 .card-text-1 {
   font-size: 24px;
-  margin-bottom: unset;
+  margin-bottom: -5px;
 }
 
 @media (max-width: 1024px) {
   .card-text {
     font-size: 16px;
+  }
+  .card-text-1 {
+    font-size: 16px;
+  }
+  .btn {
+    width: 20svw;
+  }
+}
+
+@media (max-width: 767px) {
+  .btn {
+    display: block;
+    width: 100%;
+  }
+
+  .store-session {
+    padding-top: 30px;
+  }
+  .card-body {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

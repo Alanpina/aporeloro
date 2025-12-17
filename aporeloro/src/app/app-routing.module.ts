@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: 'contact',
-    loadChildren: () =>
-      import('./components/contact/contact-form/contact-form.module').then(
-        (m) => m.ContactFormModule
-      ),
-  },
+  // {
+  //   path: 'contact',
+  //   loadChildren: () =>
+  //     import('./components/contact/contact-form/contact-form.module').then(
+  //       (m) => m.ContactFormModule
+  //     ),
+  // },
   {
     path: 'media',
     loadChildren: () =>

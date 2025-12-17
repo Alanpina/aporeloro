@@ -9,13 +9,12 @@
     <div class="overlay">
       <div class="text-content">
         <ng-container *ngIf="isMobileSize; else desktopView">
+          <p>{{ bannerTexts.desktop.line1 }}</p>
           <p>{{ bannerTexts.mobile.line }}</p>
         </ng-container>
 
         <ng-template #desktopView>
-          <div class="logo">
-            <img src="assets/images/LogoHeader.png" alt="" />
-          </div>
+          <p class="line-1">{{ bannerTexts.desktop.line1 }}</p>
           <p class="line-2">{{ bannerTexts.desktop.line2 }}</p>
         </ng-template>
       </div>

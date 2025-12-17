@@ -9,7 +9,7 @@ import { BreakpointObserverService } from 'src/app/core/breakpoint-observer/brea
 export class MainBannerComponent implements AfterViewInit {
   bannerTexts = {
     desktop: {
-      line1: "A por el oro.",
+      line1: "A POR EL ORO",
       line2: "Estudio de serigrafía enfocado en desarrollo de merch"
     },
     mobile: {
