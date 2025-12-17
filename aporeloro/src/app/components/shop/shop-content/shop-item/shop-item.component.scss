@@ -1,3 +1,4 @@
+/* ESTILOS PRODUCT CARD */
 .image-wrapper .hover-content {
   position: absolute;
   z-index: 2;
@@ -9,6 +10,7 @@
   transition: all .5s;
 }
 
+/* Hover para desktop */
 .image-wrapper:hover .hover-content {
   bottom: 30px;
   opacity: 1;
@@ -17,6 +19,7 @@
 
 .image-wrapper {
   position: relative;
+  cursor: pointer;
 }
 
 .image-wrapper .hover-content ul li {
@@ -24,6 +27,7 @@
   margin: 0px 10px;
 }
 
+/* BOTÓN DEL OJO CUADRADO */
 .image-wrapper .hover-content ul li a {
   width: 50px;
   height: 50px;
@@ -32,143 +36,665 @@
   display: inline-block;
   color: #2a2a2a;
   background-color: #fff;
+  border-radius: 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.image-wrapper .hover-content ul li a:active {
+  transform: scale(0.95);
+  background-color: #f0f0f0;
 }
 
 .product-card {
   position: relative;
   margin-bottom: 30px;
   transition: all 0.3s ease;
-  height: 100%; // Asegura que todas las cards tengan la misma altura
+  height: 100%;
   display: flex;
   flex-direction: column;
+}
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.product-card .product-image-container {
+  position: relative;
+  background: #f8f8f8;
+  padding: 20px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card .product-image-container .image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  overflow: hidden;
+}
+
+.product-card .product-image-container .product-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.product-card .product-image-container .product-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #000;
+  color: #fff;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  z-index: 2;
+}
+
+.product-card .product-info {
+  padding: 0 10px;
+  min-height: 120px;
+}
+
+.product-card .product-info .product-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-card .product-info .product-category {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.product-card .product-info .product-price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-card .product-info .product-price .current-price {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.product-card .product-info .product-price .original-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 14px;
+}
+
+.product-card .product-info .product-colors {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.product-card .product-info .product-colors .color-option {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid #eee;
+  cursor: pointer;
+}
+
+.product-card .product-info .product-colors .color-option.selected {
+  border: 1px solid #000;
+  position: relative;
+}
+
+.product-card .product-info .product-colors .color-option.selected:after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+
+/* BOTÓN MÓVIL EN CENTRO INFERIOR - CUADRADO */
+@media (max-width: 768px) {
+  .mobile-eye-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border: 1px solid #f0f0f0;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
   }
 
-  .product-image-container {
+  .mobile-eye-button i {
+    color: #2a2a2a;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+
+  .mobile-eye-button:active {
+    transform: translateX(-50%) scale(0.95);
+    background: rgba(255, 255, 255, 0.85);
+  }
+
+  .hover-content {
+    display: none;
+  }
+
+  .image-wrapper:active .product-image {
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+  }
+
+  .product-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-eye-button {
+    width: 45px;
+    height: 45px;
+    bottom: 15px;
+  }
+
+  .mobile-eye-button i {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 375px) {
+  .mobile-eye-button {
+    width: 42px;
+    height: 42px;
+    bottom: 12px;
+  }
+}
+
+/* ESTILOS MODAL */
+.modal-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.modal-images-column {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  flex-shrink: 0;
+}
+
+.modal-images-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.modal-image-item {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.modal-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.modal-image:hover {
+  transform: scale(1.02);
+}
+
+.modal-info-column {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-product-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #2a2a2a;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.price-current {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.colors-section {
+  margin-bottom: 20px;
+}
+
+.colors-label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  color: #2a2a2a;
+}
+
+.colors-container {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.color-chip {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.color-chip:hover {
+  transform: scale(1.1);
+}
+
+.color-chip.selected {
+  border-color: #000;
+  transform: scale(1.1);
+}
+
+.phrases-section {
+  margin-bottom: 20px;
+}
+
+.phrases-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-style: italic;
+}
+
+.phrase-item span {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.instagram-section {
+  margin-top: 30px;
+}
+
+.instagram-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.instagram-label {
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #2a2a2a;
+}
+
+/* BOTÓN DE INSTAGRAM - RECTANGULAR CON BORDE NEGRO */
+.btn-instagram {
+  background: transparent;
+  color: #000;
+  border: 2px solid #000;
+  padding: 12px 30px;
+  border-radius: 0;
+  font-weight: bold;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+  cursor: pointer;
+  min-height: 48px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-instagram:hover:not(:disabled) {
+  background-color: #000;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-instagram:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-instagram:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  background-color: transparent;
+  color: #666;
+  border-color: #666;
+}
+
+.instagram-note {
+  color: #666;
+  margin-top: 8px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+/* ESTILOS MEJORADOS PARA EL BOTÓN DE CERRAR */
+.modal-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 1rem 0.5rem 1rem;
+  border-bottom: none;
+  position: relative;
+  min-height: 60px;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #666;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1000;
+  font-family: Arial, sans-serif;
+  font-weight: 300;
+  line-height: 1;
+  padding: 0;
+}
+
+.btn-close:hover {
+  background-color: #f8f8f8;
+  color: #000;
+  transform: rotate(90deg);
+}
+
+.btn-close:active {
+  transform: rotate(90deg) scale(0.9);
+}
+
+/* SECCIÓN INSTAGRAM STICKY PARA MÓVILES - CORREGIDO */
+@media (max-width: 768px) {
+  .modal-content-wrapper {
+    flex-direction: column;
+    gap: 30px;
+    /* ELIMINADO: padding-bottom - esto causaba el espacio extra */
+  }
+
+  .modal-body {
+    max-height: 75vh;
+    padding: 0 1rem 1rem 1rem;
+    overflow-y: auto;
+    scroll-behavior: smooth;
     position: relative;
-    background: #f8f8f8;
-    padding: 20px;
-    margin-bottom: 15px;
-    overflow: hidden;
-    flex-grow: 1;
+  }
+
+  .modal-images-column {
+    max-width: 100%;
+  }
+
+  .modal-images-container {
+    flex-direction: row;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  .modal-image-item {
+    min-width: 250px;
+    flex-shrink: 0;
+  }
+
+  .modal-image {
+    height: 250px;
+  }
+
+  .modal-info-column {
+    margin-left: 0;
+    /* Asegurar que el contenido ocupe todo el espacio disponible */
+    flex: 1;
     display: flex;
     flex-direction: column;
-
-    // Contenedor de imagen con relación de aspecto fija (1:1 para cuadrada o 4:3 para rectangular)
-    .image-wrapper {
-      position: relative;
-      width: 100%;
-      padding-top: 100%; // Para imágenes cuadradas (1:1)
-      // padding-top: 75%; // Para imágenes rectangulares (4:3)
-      overflow: hidden;
-    }
-
-    .product-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; // Esto recorta la imagen para llenar el contenedor
-      transition: opacity 0.3s ease;
-    }
-
-    .product-badge {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      background: #000;
-      color: #fff;
-      padding: 3px 10px;
-      font-size: 12px;
-      font-weight: 500;
-      z-index: 2;
-    }
-
-    .wishlist-button {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 18px;
-      color: #ccc;
-      z-index: 2;
-
-      i.active {
-        color: #ff3b3b;
-      }
-    }
   }
 
-  .product-info {
-    padding: 0 10px;
-    min-height: 120px; // Altura mínima para la info del producto
+  /* SECCIÓN INSTAGRAM STICKY - MEJORADO */
+  .instagram-section {
+    position: sticky;
+    bottom: 0;
+    background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 255, 255, 0.95) 30%,
+      rgba(255, 255, 255, 0.9) 60%,
+      rgba(255, 255, 255, 0.8) 100%
+    );
+    padding: 15px 0 10px 0;
+    margin-top: auto; /* Esto empuja la sección al fondo */
+    border-top: 2px solid #f0f0f0;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 100;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    /* Eliminar espacio extra debajo */
+    margin-bottom: 0;
+  }
 
-    .product-title {
-      font-size: 16px;
-      font-weight: 500;
-      margin-bottom: 5px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+  .instagram-content {
+    position: relative;
+  }
+
+  .instagram-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-align: center;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .instagram-label::before {
+    content: '👇';
+    font-size: 1rem;
+    animation: wiggle 2s ease-in-out infinite;
+  }
+
+  .btn-instagram {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+    font-size: 1rem;
+    padding: 14px 24px;
+    border: 2px solid #000;
+    background: transparent;
+    color: #000;
+    border-radius: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-instagram:hover:not(:disabled) {
+    background: #000;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .instagram-note {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 0.75rem;
+    color: #666;
+    line-height: 1.3;
+  }
+
+  .btn-close {
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    font-size: 2rem;
+  }
+
+  .modal-header {
+    padding: 0.5rem 0.5rem 0 0.5rem;
+  }
+
+  /* ANIMACIÓN PARA EL INDICADOR */
+  @keyframes wiggle {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0) rotate(0deg);
     }
-
-    .product-category {
-      color: #777;
-      font-size: 14px;
-      margin-bottom: 8px;
+    40% {
+      transform: translateY(-3px) rotate(10deg);
     }
-
-    .product-price {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-
-      .current-price {
-        font-weight: 600;
-        font-size: 16px;
-      }
-
-      .original-price {
-        text-decoration: line-through;
-        color: #999;
-        font-size: 14px;
-      }
-    }
-
-    .product-colors {
-      display: flex;
-      gap: 8px;
-      margin-top: 10px;
-
-      .color-option {
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        border: 1px solid #eee;
-        cursor: pointer;
-
-        &.selected {
-          border: 1px solid #000;
-          position: relative;
-
-          &:after {
-            content: '';
-            position: absolute;
-            top: -3px;
-            left: -3px;
-            right: -3px;
-            bottom: -3px;
-            border: 1px solid #000;
-            border-radius: 50%;
-          }
-        }
-      }
+    60% {
+      transform: translateY(-2px) rotate(-5deg);
     }
   }
+}
+
+/* PARA MÓVILES MÁS PEQUEÑOS */
+@media (max-width: 480px) {
+  .instagram-section {
+    padding: 12px 0 8px 0;
+  }
+
+  .instagram-label {
+    font-size: 1rem;
+  }
+
+  .instagram-label::before {
+    font-size: 0.9rem;
+  }
+
+  .btn-instagram {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    max-width: 280px;
+  }
+
+  .modal-image {
+    height: 220px;
+  }
+
+  .modal-image-item {
+    min-width: 220px;
+  }
+
+  .instagram-note {
+    font-size: 0.7rem;
+  }
+}
+
+/* PARA IPHONE SE Y PANTALLAS MUY PEQUEÑAS */
+@media (max-width: 375px) {
+  .instagram-section {
+    padding: 10px 0 6px 0;
+  }
+
+  .btn-instagram {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    max-width: 260px;
+  }
+
+  .instagram-label {
+    font-size: 0.95rem;
+    gap: 6px;
+  }
+
+  .instagram-label::before {
+    font-size: 0.85rem;
+  }
+
+  .modal-image {
+    height: 200px;
+  }
+
+  .modal-image-item {
+    min-width: 200px;
+  }
+}
+
+/* Animaciones para el modal */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-content {
+  animation: modalFadeIn 0.3s ease-out;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.modal-body {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  max-height: 80vh;
+  overflow-y: auto;
 }

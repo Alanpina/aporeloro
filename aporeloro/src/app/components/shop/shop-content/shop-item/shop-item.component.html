@@ -1,13 +1,22 @@
 <div class="product-card">
   <div class="product-image-container">
-    <div class="image-wrapper">
+    <div class="image-wrapper" (click)="openModal(content)">
+      <!-- Botón móvil en centro inferior -->
+      <button class="mobile-eye-button" (click)="$event.stopPropagation(); openModal(content)">
+        <i class="fa fa-eye"></i>
+      </button>
+
+      <!-- Hover content para desktop (oculto en móviles) -->
       <div class="hover-content">
         <ul>
           <li>
-            <a (click)="openModal(content)"><i class="fa fa-eye"></i></a>
+            <a (click)="$event.stopPropagation(); openModal(content)">
+              <i class="fa fa-eye"></i>
+            </a>
           </li>
         </ul>
       </div>
+
       <img
         [src]="'assets/images/products/' + imageName"
         [alt]="text"
@@ -16,14 +25,15 @@
     </div>
     <div class="product-badge" *ngIf="isNew">Nuevo</div>
   </div>
+
   <div class="product-info">
     <h3 class="product-title">{{ text }}</h3>
     <p class="product-category">{{ category }}</p>
     <div class="product-price">
       <span class="current-price">${{ price.toLocaleString() }}</span>
-      <span class="original-price" *ngIf="originalPrice"
-        >${{ originalPrice.toLocaleString() }}</span
-      >
+      <span class="original-price" *ngIf="originalPrice">
+        ${{ originalPrice.toLocaleString() }}
+      </span>
     </div>
     <div class="product-colors" *ngIf="colors && colors.length > 0">
       <span
@@ -36,53 +46,73 @@
   </div>
 </div>
 
-
+<!-- Modal -->
 <ng-template #content let-modal>
   <div class="modal-header">
-    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >×</button>
   </div>
+
   <div class="modal-body">
-    <div style="display: flex; flex-direction: row;">
-      <div style="display: flex; flex-direction: column; max-width: 350px;">
-        <div>
-          <img [src]="'assets/images/products/' + imageName" [alt]="text" style="width: 100%; border-radius: 8px;">
-        </div>
-        <div style="display: flex; gap: 10px; margin-top: 10px;">
-          <img [src]="'assets/images/products/' + imageName" [alt]="text" style="width: 100%; object-fit: cover; border-radius: 4px; cursor: pointer;">
-          <!-- Puedes agregar más miniaturas aquí -->
+    <div class="modal-content-wrapper">
+      <!-- Columna de imágenes - SOLO 2 IMÁGENES DEL MISMO TAMAÑO -->
+      <div class="modal-images-column">
+        <div class="modal-images-container">
+          <!-- Primera imagen -->
+          <div class="modal-image-item">
+            <img
+              [src]="'assets/images/products/' + imageName"
+              [alt]="text"
+              class="modal-image"
+            >
+          </div>
+          <!-- Segunda imagen -->
+          <div class="modal-image-item">
+            <img
+              [src]="'assets/images/products/' + imageName"
+              [alt]="text + ' - vista 2'"
+              class="modal-image"
+            >
+          </div>
+          <!-- Puedes agregar más imágenes aquí si necesitas -->
         </div>
       </div>
 
-      <div style="flex-grow: 1; margin-left: 50px;">
+      <!-- Columna de información -->
+      <div class="modal-info-column">
         <!-- Información del producto -->
-        <div style="display: flex; flex-direction: column;">
-          <h4 style="font-weight: bold; margin-bottom: 10px;">{{ text }}</h4>
+        <div class="product-details">
+          <h4 class="modal-product-title">{{ text }}</h4>
 
-          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-            <span class="price-current" style="font-size: 1.5rem; font-weight: bold; color: #999;">
-              ${{ price }}
-            </span>
+          <div class="price-container">
+            <span class="price-current">${{ price.toLocaleString() }}</span>
           </div>
 
           <!-- Colores disponibles -->
-          <div *ngIf="colors && colors.length > 0" style="margin-bottom: 20px;">
-            <label style="font-weight: bold; display: block; margin-bottom: 8px;">Colores disponibles:</label>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-              <span *ngFor="let color of colors"
-                    class="color-chip"
-                    [style.background]="color"
-                    [class.selected]="selectedColor === color"
-                    (click)="selectedColor = color"
-                    style="width: 30px; height: 30px; border-radius: 50%; cursor: pointer; border: 2px solid #ddd;">
-              </span>
+          <div *ngIf="colors && colors.length > 0" class="colors-section">
+            <label class="colors-label">Colores disponibles:</label>
+            <div class="colors-container">
+              <span
+                *ngFor="let color of colors"
+                class="color-chip"
+                [style.background]="color"
+                [class.selected]="selectedColor === color"
+                (click)="selectedColor = color"
+              ></span>
             </div>
           </div>
 
           <!-- Frases del producto -->
-          <div style="margin-bottom: 20px;">
-            <div style="display: flex; flex-direction: column; gap: 5px; font-style: italic;">
-              <div *ngFor="let phrase of (phrases.length > 0 ? phrases : getDefaultPhrases()); let i = index"
-                   class="phrase-item">
+          <div class="phrases-section">
+            <div class="phrases-list">
+              <div
+                *ngFor="let phrase of (phrases.length > 0 ? phrases : getDefaultPhrases()); let i = index"
+                class="phrase-item"
+              >
                 <span>{{ phrase }}</span>
               </div>
             </div>
@@ -90,32 +120,20 @@
         </div>
 
         <!-- Botón de Instagram -->
-        <div style="margin-top: 30px;">
-          <div style="display: flex; flex-direction: column">
-            <label style="font-weight: bold; margin-bottom: 15px; font-size: 1.1rem;">Comprar Via</label>
-             <button
+        <div class="instagram-section">
+          <div class="instagram-content">
+            <label class="instagram-label">Comprar Via</label>
+            <button
               type="button"
               class="btn btn-instagram"
               (click)="contactViaInstagram()"
               [disabled]="isContacting"
-              style="background: linear-gradient(45deg, #405DE6, #833AB4, #E1306C);
-                     color: white;
-                     border: none;
-                     padding: 12px 30px;
-                     border-radius: 8px;
-                     font-weight: bold;
-                     font-size: 1rem;
-                     display: flex;
-                     align-items: center;
-                     justify-content: center;
-                     gap: 8px;
-                     transition: all 0.3s ease;
-                     margin-bottom: 10px;">
+            >
               <i class="fab fa-instagram" *ngIf="!isContacting"></i>
               <i class="fas fa-spinner fa-spin" *ngIf="isContacting"></i>
               {{ isContacting ? 'Preparando mensaje...' : 'Contactar por Instagram' }}
             </button>
-            <small style="color: #666; margin-top: 8px; text-align: center;">
+            <small class="instagram-note">
               * Se copiará un mensaje automático y se abrirá la app
             </small>
           </div>
